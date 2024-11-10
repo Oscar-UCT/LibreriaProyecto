@@ -8,13 +8,12 @@ namespace LibreriaProyecto
     public partial class Busqueda : Form
     {
         Form1 loginPrevio;
+        Cliente clienteIngresado;
         DataTable tablaLibros = new DataTable("Libros");
 
-        public Busqueda(Form1 loginPrevio)
+        public Busqueda(Form1 loginPrevio, Cliente clienteIngresado)
         {
             InitializeComponent();
-
-
 
             // Carga inicial
             string consulta = "SELECT Nombre, Autor, Género, Año, Precio FROM Libros";
@@ -31,6 +30,12 @@ namespace LibreriaProyecto
             }
 
             this.loginPrevio = loginPrevio;
+
+            this.clienteIngresado = clienteIngresado;
+            nombreLabel.Text = clienteIngresado.Nombre;
+            correoLabel.Text = clienteIngresado.Correo;
+            telefonoLabel.Text = clienteIngresado.Teléfono;
+
         }
         private void buscarBtn_Click(object sender, EventArgs e)
         {

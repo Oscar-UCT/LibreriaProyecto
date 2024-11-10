@@ -13,9 +13,11 @@ namespace LibreriaProyecto
 {
     public partial class Registro : Form
     {
-        public Registro()
+        Form1 loginPrevio;
+        public Registro(Form1 loginPrevio)
         {
             InitializeComponent();
+            this.loginPrevio = loginPrevio;
         }
 
         private void confirmadoRegistroBtn_Click(object sender, EventArgs e)
@@ -38,6 +40,8 @@ namespace LibreriaProyecto
                     }
                 }
                 MessageBox.Show("Usuario Añadido Con Éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loginPrevio.Show();
+                this.Dispose();
             }
         }
 
@@ -55,6 +59,12 @@ namespace LibreriaProyecto
                 MessageBox.Show("Rellene todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return false;
+        }
+
+        private void cancelarRegistroBtn_Click(object sender, EventArgs e)
+        {
+            loginPrevio.Show();
+            this.Dispose();
         }
     }
 }

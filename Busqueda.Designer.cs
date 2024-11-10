@@ -39,6 +39,10 @@
             this.busquedaInput = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.salirBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nombreLabel = new System.Windows.Forms.Label();
+            this.correoLabel = new System.Windows.Forms.Label();
+            this.telefonoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaBusqueda)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -95,7 +99,7 @@
             this.tablaBusqueda.ShowCellToolTips = false;
             this.tablaBusqueda.ShowEditingIcon = false;
             this.tablaBusqueda.ShowRowErrors = false;
-            this.tablaBusqueda.Size = new System.Drawing.Size(1390, 644);
+            this.tablaBusqueda.Size = new System.Drawing.Size(1358, 632);
             this.tablaBusqueda.TabIndex = 0;
             this.tablaBusqueda.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.tablaBusqueda_CellFormatting);
             // 
@@ -110,7 +114,7 @@
             this.buscarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buscarBtn.Font = new System.Drawing.Font("Fira Code", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarBtn.ForeColor = System.Drawing.Color.White;
-            this.buscarBtn.Location = new System.Drawing.Point(426, 32);
+            this.buscarBtn.Location = new System.Drawing.Point(395, 51);
             this.buscarBtn.Name = "buscarBtn";
             this.buscarBtn.Size = new System.Drawing.Size(132, 32);
             this.buscarBtn.TabIndex = 4;
@@ -123,7 +127,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panel1.Controls.Add(this.busquedaInput);
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(43, 36);
+            this.panel1.Location = new System.Drawing.Point(12, 55);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(346, 29);
             this.panel1.TabIndex = 8;
@@ -142,11 +146,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 9);
+            this.label1.Location = new System.Drawing.Point(12, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 16);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Buscar por libro, autor o genero";
+            this.label1.Text = "Buscar por libro, autor o género";
             // 
             // salirBtn
             // 
@@ -165,6 +169,43 @@
             this.salirBtn.UseVisualStyleBackColor = false;
             this.salirBtn.Click += new System.EventHandler(this.salirBtn_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(612, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 16);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Datos:";
+            // 
+            // nombreLabel
+            // 
+            this.nombreLabel.AutoSize = true;
+            this.nombreLabel.Location = new System.Drawing.Point(612, 32);
+            this.nombreLabel.Name = "nombreLabel";
+            this.nombreLabel.Size = new System.Drawing.Size(56, 16);
+            this.nombreLabel.TabIndex = 12;
+            this.nombreLabel.Text = "Nombre";
+            // 
+            // correoLabel
+            // 
+            this.correoLabel.AutoSize = true;
+            this.correoLabel.Location = new System.Drawing.Point(612, 55);
+            this.correoLabel.Name = "correoLabel";
+            this.correoLabel.Size = new System.Drawing.Size(48, 16);
+            this.correoLabel.TabIndex = 13;
+            this.correoLabel.Text = "Correo";
+            // 
+            // telefonoLabel
+            // 
+            this.telefonoLabel.AutoSize = true;
+            this.telefonoLabel.Location = new System.Drawing.Point(612, 76);
+            this.telefonoLabel.Name = "telefonoLabel";
+            this.telefonoLabel.Size = new System.Drawing.Size(61, 16);
+            this.telefonoLabel.TabIndex = 14;
+            this.telefonoLabel.Text = "Teléfono";
+            // 
             // Busqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -172,6 +213,10 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1382, 753);
+            this.Controls.Add(this.telefonoLabel);
+            this.Controls.Add(this.correoLabel);
+            this.Controls.Add(this.nombreLabel);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.salirBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -198,5 +243,9 @@
         private System.Windows.Forms.TextBox busquedaInput;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button salirBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label nombreLabel;
+        private System.Windows.Forms.Label correoLabel;
+        private System.Windows.Forms.Label telefonoLabel;
     }
 }

@@ -13,6 +13,8 @@ namespace LibreriaProyecto
 
         private void ingresoBtn_Click(object sender, EventArgs e)
         {
+            Cliente clienteDatos;
+
             if (usuarioInput.Text == "admin" && contraseñaInput.Text == "admin")
             {
                 avisoRellene.Visible = false;
@@ -31,28 +33,26 @@ namespace LibreriaProyecto
                     conexion.Open();
                     using (SqlCommand cmd = conexion.CreateCommand())
                     {
-                        cmd.CommandText = "SELECT Nombre, Contraseña FROM Usuarios";
+                        cmd.CommandText = "SELECT * FROM Usuarios";
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                if (usuarioInput.Text == reader.GetString(0) && contraseñaInput.Text == reader.GetString(1))
+                                if (usuarioInput.Text == reader.GetString(1) && contraseñaInput.Text == reader.GetString(2))
                                 {
                                     usuarioEncontrado = true;
+                                    clienteDatos = new Cliente(reader.GetString(1), reader.GetString(3), reader.GetString(4));
+                        Busqueda busquedaForm = new Busqueda(this, clienteDatos);
+                        this.Hide();
+                        busquedaForm.Show();
                                 }
                             }
                         }
                     }
-                    if (usuarioEncontrado)
-                    {
-                        MessageBox.Show("Ingreso Exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Busqueda busquedaForm = new Busqueda(this);
-                        this.Hide();
-                        busquedaForm.Show();
-                    }
-                    else
+                    if (!usuarioEncontrado)
                     {
                         MessageBox.Show("Usuario No Encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //MessageBox.Show("Ingreso Exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -60,6 +60,13 @@ namespace LibreriaProyecto
             {
                 avisoRellene.Visible = true;
             }
+        }
+
+        private void registrarBtn_Click(object sender, EventArgs e)
+        {
+            Registro registro = new Registro(this);
+            this.Hide();
+            registro.Show();
         }
     }
 }

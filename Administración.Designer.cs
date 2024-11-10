@@ -138,7 +138,7 @@
             this.buscarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buscarBtn.Font = new System.Drawing.Font("Fira Code", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarBtn.ForeColor = System.Drawing.Color.White;
-            this.buscarBtn.Location = new System.Drawing.Point(538, 163);
+            this.buscarBtn.Location = new System.Drawing.Point(538, 164);
             this.buscarBtn.Name = "buscarBtn";
             this.buscarBtn.Size = new System.Drawing.Size(132, 32);
             this.buscarBtn.TabIndex = 9;

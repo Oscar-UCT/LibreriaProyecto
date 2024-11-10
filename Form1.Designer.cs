@@ -122,6 +122,7 @@
             this.registrarBtn.TabIndex = 4;
             this.registrarBtn.Text = "Registrarse";
             this.registrarBtn.UseVisualStyleBackColor = false;
+            this.registrarBtn.Click += new System.EventHandler(this.registrarBtn_Click);
             // 
             // label1
             // 
@@ -136,9 +137,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(164, 45);
+            this.pictureBox3.Location = new System.Drawing.Point(175, 50);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(154, 118);
+            this.pictureBox3.Size = new System.Drawing.Size(150, 120);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;

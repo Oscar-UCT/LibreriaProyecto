@@ -34,22 +34,30 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.usuarioInput = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.contraseñaInput = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.avisoSeleccione = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.telefonoInput = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.telefonoInput = new System.Windows.Forms.TextBox();
             this.correoInput = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.contraseñaInput = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // cancelarRegistroBtn
@@ -67,6 +75,7 @@
             this.cancelarRegistroBtn.TabIndex = 12;
             this.cancelarRegistroBtn.Text = "Cancelar";
             this.cancelarRegistroBtn.UseVisualStyleBackColor = false;
+            this.cancelarRegistroBtn.Click += new System.EventHandler(this.cancelarRegistroBtn_Click);
             // 
             // confirmadoRegistroBtn
             // 
@@ -117,6 +126,17 @@
             this.panel2.Size = new System.Drawing.Size(262, 29);
             this.panel2.TabIndex = 16;
             // 
+            // contraseñaInput
+            // 
+            this.contraseñaInput.BackColor = System.Drawing.Color.White;
+            this.contraseñaInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.contraseñaInput.Font = new System.Drawing.Font("Fira Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contraseñaInput.Location = new System.Drawing.Point(0, 0);
+            this.contraseñaInput.MaxLength = 16;
+            this.contraseñaInput.Name = "contraseñaInput";
+            this.contraseñaInput.Size = new System.Drawing.Size(262, 25);
+            this.contraseñaInput.TabIndex = 2;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
@@ -135,7 +155,6 @@
             this.avisoSeleccione.Size = new System.Drawing.Size(56, 16);
             this.avisoSeleccione.TabIndex = 23;
             this.avisoSeleccione.Text = "Nombre";
-            this.avisoSeleccione.Visible = false;
             // 
             // label1
             // 
@@ -145,7 +164,6 @@
             this.label1.Size = new System.Drawing.Size(76, 16);
             this.label1.TabIndex = 24;
             this.label1.Text = "Contraseña";
-            this.label1.Visible = false;
             // 
             // label2
             // 
@@ -155,7 +173,6 @@
             this.label2.Size = new System.Drawing.Size(61, 16);
             this.label2.TabIndex = 27;
             this.label2.Text = "Teléfono";
-            this.label2.Visible = false;
             // 
             // panel3
             // 
@@ -165,25 +182,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(262, 29);
             this.panel3.TabIndex = 26;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(106, 370);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 16);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Correo";
-            this.label3.Visible = false;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panel4.Controls.Add(this.correoInput);
-            this.panel4.Location = new System.Drawing.Point(109, 389);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(262, 29);
-            this.panel4.TabIndex = 29;
             // 
             // telefonoInput
             // 
@@ -195,6 +193,24 @@
             this.telefonoInput.Name = "telefonoInput";
             this.telefonoInput.Size = new System.Drawing.Size(262, 25);
             this.telefonoInput.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(106, 370);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 16);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Correo";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel4.Controls.Add(this.correoInput);
+            this.panel4.Location = new System.Drawing.Point(109, 389);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(262, 29);
+            this.panel4.TabIndex = 29;
             // 
             // correoInput
             // 
@@ -217,16 +233,45 @@
             this.label4.TabIndex = 31;
             this.label4.Text = "Ventana de registro";
             // 
-            // contraseñaInput
+            // pictureBox2
             // 
-            this.contraseñaInput.BackColor = System.Drawing.Color.White;
-            this.contraseñaInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.contraseñaInput.Font = new System.Drawing.Font("Fira Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contraseñaInput.Location = new System.Drawing.Point(0, 0);
-            this.contraseñaInput.MaxLength = 16;
-            this.contraseñaInput.Name = "contraseñaInput";
-            this.contraseñaInput.Size = new System.Drawing.Size(262, 25);
-            this.contraseñaInput.TabIndex = 2;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(74, 163);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(29, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(74, 236);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(74, 314);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(29, 32);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 34;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(74, 389);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(29, 32);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 35;
+            this.pictureBox5.TabStop = false;
             // 
             // Registro
             // 
@@ -234,6 +279,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(482, 553);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel4);
@@ -259,6 +308,10 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,5 +335,9 @@
         private System.Windows.Forms.TextBox correoInput;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox contraseñaInput;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
