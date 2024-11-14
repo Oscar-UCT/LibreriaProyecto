@@ -42,16 +42,16 @@ namespace LibreriaProyecto
                                 {
                                     usuarioEncontrado = true;
                                     clienteDatos = new Cliente(reader.GetString(1), reader.GetString(3), reader.GetString(4));
-                        Busqueda busquedaForm = new Busqueda(this, clienteDatos);
-                        this.Hide();
-                        busquedaForm.Show();
+                                    Busqueda busquedaForm = new Busqueda(this, clienteDatos);
+                                    this.Hide();
+                                    busquedaForm.Show();
                                 }
                             }
                         }
                     }
                     if (!usuarioEncontrado)
                     {
-                        MessageBox.Show("Usuario No Encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Usuario no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         //MessageBox.Show("Ingreso Exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }

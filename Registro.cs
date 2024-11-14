@@ -27,6 +27,7 @@ namespace LibreriaProyecto
                 using (SqlConnection conexion = new SqlConnection(@"Data Source=OSCAR-VICTUS;Initial Catalog=LibrosDB;Integrated Security=True;"))
                 {
                     conexion.Open();
+
                     using (SqlCommand cmd = new SqlCommand("CrearUsuario", conexion))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -36,10 +37,9 @@ namespace LibreriaProyecto
                         cmd.Parameters.AddWithValue("@Teléfono", telefonoInput.Text);
                         cmd.Parameters.AddWithValue("@Correo", correoInput.Text);
                         cmd.ExecuteNonQuery();
-
                     }
                 }
-                MessageBox.Show("Usuario Añadido Con Éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Usuario registrado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loginPrevio.Show();
                 this.Dispose();
             }
@@ -56,7 +56,7 @@ namespace LibreriaProyecto
             }
             else
             {
-                MessageBox.Show("Rellene todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Rellene todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return false;
         }

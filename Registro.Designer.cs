@@ -62,6 +62,7 @@
             // 
             // cancelarRegistroBtn
             // 
+            this.cancelarRegistroBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cancelarRegistroBtn.BackColor = System.Drawing.Color.White;
             this.cancelarRegistroBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancelarRegistroBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
@@ -69,9 +70,9 @@
             this.cancelarRegistroBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelarRegistroBtn.Font = new System.Drawing.Font("Fira Code", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelarRegistroBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cancelarRegistroBtn.Location = new System.Drawing.Point(247, 445);
+            this.cancelarRegistroBtn.Location = new System.Drawing.Point(236, 448);
             this.cancelarRegistroBtn.Name = "cancelarRegistroBtn";
-            this.cancelarRegistroBtn.Size = new System.Drawing.Size(169, 32);
+            this.cancelarRegistroBtn.Size = new System.Drawing.Size(159, 32);
             this.cancelarRegistroBtn.TabIndex = 12;
             this.cancelarRegistroBtn.Text = "Cancelar";
             this.cancelarRegistroBtn.UseVisualStyleBackColor = false;
@@ -79,6 +80,7 @@
             // 
             // confirmadoRegistroBtn
             // 
+            this.confirmadoRegistroBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.confirmadoRegistroBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.confirmadoRegistroBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.confirmadoRegistroBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
@@ -88,7 +90,7 @@
             this.confirmadoRegistroBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.confirmadoRegistroBtn.Font = new System.Drawing.Font("Fira Code", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmadoRegistroBtn.ForeColor = System.Drawing.Color.White;
-            this.confirmadoRegistroBtn.Location = new System.Drawing.Point(109, 445);
+            this.confirmadoRegistroBtn.Location = new System.Drawing.Point(98, 448);
             this.confirmadoRegistroBtn.Name = "confirmadoRegistroBtn";
             this.confirmadoRegistroBtn.Size = new System.Drawing.Size(132, 32);
             this.confirmadoRegistroBtn.TabIndex = 11;
@@ -98,10 +100,11 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panel1.Controls.Add(this.usuarioInput);
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(109, 163);
+            this.panel1.Location = new System.Drawing.Point(133, 163);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(262, 29);
             this.panel1.TabIndex = 15;
@@ -119,9 +122,10 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panel2.Controls.Add(this.contraseñaInput);
-            this.panel2.Location = new System.Drawing.Point(109, 236);
+            this.panel2.Location = new System.Drawing.Point(133, 236);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(262, 29);
             this.panel2.TabIndex = 16;
@@ -139,6 +143,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(175, 0);
             this.pictureBox3.Name = "pictureBox3";
@@ -149,8 +154,9 @@
             // 
             // avisoSeleccione
             // 
+            this.avisoSeleccione.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.avisoSeleccione.AutoSize = true;
-            this.avisoSeleccione.Location = new System.Drawing.Point(106, 144);
+            this.avisoSeleccione.Location = new System.Drawing.Point(130, 144);
             this.avisoSeleccione.Name = "avisoSeleccione";
             this.avisoSeleccione.Size = new System.Drawing.Size(56, 16);
             this.avisoSeleccione.TabIndex = 23;
@@ -158,8 +164,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(106, 217);
+            this.label1.Location = new System.Drawing.Point(130, 217);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 16);
             this.label1.TabIndex = 24;
@@ -167,8 +174,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(106, 295);
+            this.label2.Location = new System.Drawing.Point(130, 295);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 16);
             this.label2.TabIndex = 27;
@@ -176,9 +184,10 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panel3.Controls.Add(this.telefonoInput);
-            this.panel3.Location = new System.Drawing.Point(109, 314);
+            this.panel3.Location = new System.Drawing.Point(133, 314);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(262, 29);
             this.panel3.TabIndex = 26;
@@ -196,8 +205,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(106, 370);
+            this.label3.Location = new System.Drawing.Point(130, 370);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 16);
             this.label3.TabIndex = 30;
@@ -205,9 +215,10 @@
             // 
             // panel4
             // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panel4.Controls.Add(this.correoInput);
-            this.panel4.Location = new System.Drawing.Point(109, 389);
+            this.panel4.Location = new System.Drawing.Point(133, 389);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(262, 29);
             this.panel4.TabIndex = 29;
@@ -235,8 +246,9 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(74, 163);
+            this.pictureBox2.Location = new System.Drawing.Point(94, 163);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(29, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -245,8 +257,9 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(74, 236);
+            this.pictureBox1.Location = new System.Drawing.Point(94, 236);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(29, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -255,8 +268,9 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(74, 314);
+            this.pictureBox4.Location = new System.Drawing.Point(94, 314);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(29, 32);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -265,8 +279,9 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(74, 389);
+            this.pictureBox5.Location = new System.Drawing.Point(94, 389);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(29, 32);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -296,6 +311,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(500, 600);
             this.Name = "Registro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";

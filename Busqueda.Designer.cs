@@ -43,6 +43,10 @@
             this.nombreLabel = new System.Windows.Forms.Label();
             this.correoLabel = new System.Windows.Forms.Label();
             this.telefonoLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.libroSeleccionLabel = new System.Windows.Forms.Label();
+            this.comprarBtn = new System.Windows.Forms.Button();
+            this.precioLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaBusqueda)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +60,7 @@
             this.tablaBusqueda.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.tablaBusqueda.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaBusqueda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tablaBusqueda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.tablaBusqueda.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.tablaBusqueda.BackgroundColor = System.Drawing.Color.White;
@@ -91,6 +96,7 @@
             this.tablaBusqueda.RowHeadersWidth = 51;
             this.tablaBusqueda.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Ebrima", 10F);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tablaBusqueda.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tablaBusqueda.RowTemplate.Height = 24;
             this.tablaBusqueda.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -101,10 +107,12 @@
             this.tablaBusqueda.ShowRowErrors = false;
             this.tablaBusqueda.Size = new System.Drawing.Size(1358, 632);
             this.tablaBusqueda.TabIndex = 0;
+            this.tablaBusqueda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaBusqueda_CellClick);
             this.tablaBusqueda.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.tablaBusqueda_CellFormatting);
             // 
             // buscarBtn
             // 
+            this.buscarBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buscarBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buscarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buscarBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
@@ -124,6 +132,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panel1.Controls.Add(this.busquedaInput);
             this.panel1.ForeColor = System.Drawing.Color.Black;
@@ -145,6 +154,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 28);
             this.label1.Name = "label1";
@@ -154,6 +164,7 @@
             // 
             // salirBtn
             // 
+            this.salirBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.salirBtn.BackColor = System.Drawing.Color.White;
             this.salirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salirBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
@@ -171,6 +182,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(612, 9);
@@ -181,6 +193,7 @@
             // 
             // nombreLabel
             // 
+            this.nombreLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nombreLabel.AutoSize = true;
             this.nombreLabel.Location = new System.Drawing.Point(612, 32);
             this.nombreLabel.Name = "nombreLabel";
@@ -190,6 +203,7 @@
             // 
             // correoLabel
             // 
+            this.correoLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.correoLabel.AutoSize = true;
             this.correoLabel.Location = new System.Drawing.Point(612, 55);
             this.correoLabel.Name = "correoLabel";
@@ -199,12 +213,66 @@
             // 
             // telefonoLabel
             // 
+            this.telefonoLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.telefonoLabel.AutoSize = true;
             this.telefonoLabel.Location = new System.Drawing.Point(612, 76);
             this.telefonoLabel.Name = "telefonoLabel";
             this.telefonoLabel.Size = new System.Drawing.Size(61, 16);
             this.telefonoLabel.TabIndex = 14;
             this.telefonoLabel.Text = "Teléfono";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(760, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(144, 16);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Libro seleccionado:";
+            // 
+            // libroSeleccionLabel
+            // 
+            this.libroSeleccionLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.libroSeleccionLabel.AutoSize = true;
+            this.libroSeleccionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.libroSeleccionLabel.Location = new System.Drawing.Point(760, 34);
+            this.libroSeleccionLabel.Name = "libroSeleccionLabel";
+            this.libroSeleccionLabel.Size = new System.Drawing.Size(297, 20);
+            this.libroSeleccionLabel.TabIndex = 16;
+            this.libroSeleccionLabel.Text = "Seleccione un libro para continuar";
+            // 
+            // comprarBtn
+            // 
+            this.comprarBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comprarBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.comprarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comprarBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.comprarBtn.FlatAppearance.BorderSize = 0;
+            this.comprarBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.comprarBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.comprarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comprarBtn.Font = new System.Drawing.Font("Fira Code", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comprarBtn.ForeColor = System.Drawing.Color.White;
+            this.comprarBtn.Location = new System.Drawing.Point(763, 67);
+            this.comprarBtn.Name = "comprarBtn";
+            this.comprarBtn.Size = new System.Drawing.Size(132, 32);
+            this.comprarBtn.TabIndex = 17;
+            this.comprarBtn.Text = "Comprar";
+            this.comprarBtn.UseVisualStyleBackColor = false;
+            this.comprarBtn.Click += new System.EventHandler(this.comprarBtn_Click);
+            // 
+            // precioLabel
+            // 
+            this.precioLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.precioLabel.AutoSize = true;
+            this.precioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precioLabel.Location = new System.Drawing.Point(901, 72);
+            this.precioLabel.Name = "precioLabel";
+            this.precioLabel.Size = new System.Drawing.Size(29, 20);
+            this.precioLabel.TabIndex = 18;
+            this.precioLabel.Text = "$0";
             // 
             // Busqueda
             // 
@@ -213,6 +281,10 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1382, 753);
+            this.Controls.Add(this.precioLabel);
+            this.Controls.Add(this.comprarBtn);
+            this.Controls.Add(this.libroSeleccionLabel);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.telefonoLabel);
             this.Controls.Add(this.correoLabel);
             this.Controls.Add(this.nombreLabel);
@@ -247,5 +319,9 @@
         private System.Windows.Forms.Label nombreLabel;
         private System.Windows.Forms.Label correoLabel;
         private System.Windows.Forms.Label telefonoLabel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label libroSeleccionLabel;
+        private System.Windows.Forms.Button comprarBtn;
+        private System.Windows.Forms.Label precioLabel;
     }
 }

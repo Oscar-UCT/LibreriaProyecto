@@ -48,6 +48,7 @@
             // 
             // ingresoBtn
             // 
+            this.ingresoBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ingresoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ingresoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ingresoBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
@@ -67,6 +68,7 @@
             // 
             // contraseñaInput
             // 
+            this.contraseñaInput.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.contraseñaInput.AsciiOnly = true;
             this.contraseñaInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.contraseñaInput.Font = new System.Drawing.Font("Fira Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -75,10 +77,11 @@
             this.contraseñaInput.PasswordChar = '*';
             this.contraseñaInput.Size = new System.Drawing.Size(262, 25);
             this.contraseñaInput.TabIndex = 2;
-            this.contraseñaInput.Text = "admin";
+            this.contraseñaInput.Text = "12345";
             // 
             // usuarioInput
             // 
+            this.usuarioInput.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.usuarioInput.BackColor = System.Drawing.Color.White;
             this.usuarioInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.usuarioInput.Font = new System.Drawing.Font("Fira Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -87,10 +90,11 @@
             this.usuarioInput.Name = "usuarioInput";
             this.usuarioInput.Size = new System.Drawing.Size(262, 25);
             this.usuarioInput.TabIndex = 1;
-            this.usuarioInput.Text = "admin";
+            this.usuarioInput.Text = "Oscar";
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panel1.Controls.Add(this.usuarioInput);
             this.panel1.ForeColor = System.Drawing.Color.Black;
@@ -101,6 +105,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panel2.Location = new System.Drawing.Point(122, 284);
             this.panel2.Name = "panel2";
@@ -109,6 +114,7 @@
             // 
             // registrarBtn
             // 
+            this.registrarBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registrarBtn.BackColor = System.Drawing.Color.White;
             this.registrarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.registrarBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
@@ -126,7 +132,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(183, 524);
             this.label1.Name = "label1";
@@ -136,6 +142,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(175, 50);
             this.pictureBox3.Name = "pictureBox3";
@@ -146,6 +153,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(77, 226);
             this.pictureBox2.Name = "pictureBox2";
@@ -156,6 +164,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(77, 286);
             this.pictureBox1.Name = "pictureBox1";
@@ -166,13 +175,14 @@
             // 
             // avisoRellene
             // 
+            this.avisoRellene.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.avisoRellene.AutoSize = true;
             this.avisoRellene.ForeColor = System.Drawing.Color.Black;
             this.avisoRellene.Location = new System.Drawing.Point(79, 397);
             this.avisoRellene.Name = "avisoRellene";
-            this.avisoRellene.Size = new System.Drawing.Size(127, 16);
+            this.avisoRellene.Size = new System.Drawing.Size(115, 16);
             this.avisoRellene.TabIndex = 23;
-            this.avisoRellene.Text = "Rellene los campos";
+            this.avisoRellene.Text = "Rellene sus datos";
             this.avisoRellene.Visible = false;
             // 
             // Form1
@@ -193,9 +203,10 @@
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.DimGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(500, 600);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Libreria";
+            this.Text = "Libromania";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

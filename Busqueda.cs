@@ -7,6 +7,7 @@ namespace LibreriaProyecto
 {
     public partial class Busqueda : Form
     {
+        int filaSeleccionada = -1;
         Form1 loginPrevio;
         Cliente clienteIngresado;
         DataTable tablaLibros = new DataTable("Libros");
@@ -80,7 +81,7 @@ namespace LibreriaProyecto
             {
                 if (e.Value is int Precio)
                 {
-                    e.Value = Precio.ToString("C");  // Format as currency
+                    e.Value = Precio.ToString("C");
                 }
             }
 
@@ -95,6 +96,42 @@ namespace LibreriaProyecto
         private void Busqueda_FormClosed(object sender, FormClosedEventArgs e)
         {
             loginPrevio.Close();
+        }
+
+        private void tablaBusqueda_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            filaSeleccionada = e.RowIndex;
+            if (filaSeleccionada > -1 )
+            {
+                filaSeleccionada = e.RowIndex;
+                libroSeleccionLabel.Text = tablaBusqueda.Rows[filaSeleccionada].Cells[0].Value.ToString();
+                precioLabel.Text = $"${tablaBusqueda.Rows[filaSeleccionada].Cells[4].Value}";
+            }
+        }
+
+        private void comprarBtn_Click(object sender, EventArgs e)
+        {
+            if (filaSeleccionada > -1)
+            {
+                DialogResult confirmacion = MessageBox.Show($"Desea comprar libro {libroSeleccionLabel.Text} a ${precioLabel.Text.Substring(1)}?", "Compra", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmacion == DialogResult.Yes)
+                {
+                using (SqlConnection conexion = new SqlConnection(@"Data Source=OSCAR-VICTUS;Initial Catalog=LibrosDB;Integrated Security=True;"))
+                {
+                    conexion.Open();
+                    using (SqlCommand cmd = new SqlCommand("AñadirPedido", conexion))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@NombreLibro", libroSeleccionLabel.Text);
+                        cmd.Parameters.AddWithValue("@NombreCliente", clienteIngresado.Nombre);
+                        cmd.Parameters.AddWithValue("@Precio", precioLabel.Text.Substring(1));
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                    MessageBox.Show($"Usted ha comprado el libro: {libroSeleccionLabel.Text}", "Compra confirmada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
         }
     }
 }

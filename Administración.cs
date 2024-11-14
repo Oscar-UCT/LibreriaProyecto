@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -9,8 +10,10 @@ namespace LibreriaProyecto
     {
         Form1 loginPrevio;
         DataTable tablaLibros = new DataTable();
+        DataTable tablaPedidos = new DataTable();
         int indiceSeleccionado = -1;
         int indiceBaseDatos = -1;
+        int pedidoSeleccionado = -1;
 
         public Administración(Form1 loginPrevio)
         {
@@ -29,7 +32,18 @@ namespace LibreriaProyecto
                     AjusteCustom();
                 }
             }
+            string consulta2 = "SELECT * FROM Pedidos";
+            using (SqlConnection conexion = new SqlConnection(@"Data Source=OSCAR-VICTUS;Initial Catalog=LibrosDB;Integrated Security=True;"))
+            {
+                conexion.Open();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(consulta2, conexion))
+                {
+                    adapter.Fill(tablaPedidos);
+                    tablaPedidosForm.DataSource = tablaPedidos;
 
+                    AjusteCustom();
+                }
+            }
             this.loginPrevio = loginPrevio;
         }
 
@@ -113,7 +127,7 @@ namespace LibreriaProyecto
                         }
                     }
                 }
-                MessageBox.Show("Libro Ingresado Con Éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Libro Ingresado Con Éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
         }
@@ -144,12 +158,12 @@ namespace LibreriaProyecto
         {
             if (!int.TryParse(añoInput.Text, out _) && añoInput.Text != "")
             {
-                MessageBox.Show("Ingrese un año válido", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ingrese un año válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (!int.TryParse(precioInput.Text, out _) && precioInput.Text != "")
             {
-                MessageBox.Show("Ingrese un precio válido", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ingrese un precio válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -163,7 +177,7 @@ namespace LibreriaProyecto
             }
             else
             {
-                MessageBox.Show("Rellene todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Rellene todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return false;
         }
@@ -214,7 +228,7 @@ namespace LibreriaProyecto
                 }
                 else
                 {
-                    MessageBox.Show("No se detectaron cambios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No se detectaron cambios.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }
@@ -334,6 +348,59 @@ namespace LibreriaProyecto
         private void Administración_FormClosed(object sender, FormClosedEventArgs e)
         {
             loginPrevio.Close();
+        }
+
+        private void buscarPedidoBtn_Click(object sender, EventArgs e)
+        {
+            List<string> camposRellenados = new List<string>();
+            if (clienteInput.Text != "")
+            {
+                camposRellenados.Add($"Cliente LIKE '%{clienteInput.Text}%'");
+            }
+            if (libroPedidoInput.Text != "")
+            {
+                camposRellenados.Add($"Libro LIKE '%{libroPedidoInput.Text}%'");
+            }
+
+            tablaPedidos.DefaultView.RowFilter = $"{string.Join(" AND ", camposRellenados)}";
+        }
+
+        private void tablaPedidosForm_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            pedidoSeleccionado = e.RowIndex;
+            if (pedidoSeleccionado > -1)
+            {
+                using (SqlConnection conexion = new SqlConnection(@"Data Source=OSCAR-VICTUS;Initial Catalog=LibrosDB;Integrated Security=True;"))
+                {
+                    conexion.Open();
+                    using (SqlCommand cmd = conexion.CreateCommand())
+                    {
+                        cmd.CommandText = $"SELECT Nombre, Correo, Teléfono FROM Usuarios WHERE Nombre = '{tablaPedidosForm.Rows[pedidoSeleccionado].Cells[2].Value}'";
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                nombreLabel.Text = reader.GetString(0);
+                                correoLabel.Text = reader.GetString(1);
+                                telefonoLabel.Text = reader.GetString(2);
+
+                                nombreLabel.Visible = true;
+                                correoLabel.Visible = true;
+                                telefonoLabel.Visible = true;
+                                seleccionePedidoLabel.Visible = false;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void tablaPedidosForm_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 3 && e.Value != null)
+            {
+                e.Value = $"${e.Value}";
+            }
         }
     }
 }
