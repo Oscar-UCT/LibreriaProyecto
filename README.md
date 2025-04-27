@@ -1,1 +1,4 @@
-![image](https://github.com/user-attachments/assets/9840d8f1-29f4-45ec-ad1d-e79b2b5827a3)
+# Mini projecto de taller - Administración de libreria con roles y usuarios
+
+![image](https://github.com/user-attachments/assets/091b2dac-0aac-4d34-89be-1c6ba9396854)
+![image](https://github.com/user-attachments/assets/c5e472f0-f82a-427a-abc8-367352758904)
